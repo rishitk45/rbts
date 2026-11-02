@@ -1,0 +1,143 @@
+AIM: Write a program to do a square using a while loop, doing steps with a for loop, to change directions based on condition, controlling motor speed using switch case.
+
+
+1. Square using While loop:
+import ch.aplu.robotsim.*;
+
+class Square
+{
+    Square()
+    {
+        TurtleRobot robot = new TurtleRobot();
+
+        int i = 0;
+
+        while (i < 4)
+        {
+            robot.forward(50);
+            robot.right(90);
+            i++;
+        }
+
+        robot.exit();
+    }
+
+    public static void main(String[] args)
+    {
+        new Square();
+    }
+}
+
+
+
+
+2. Doing steps with a for loop:
+import ch.aplu.robotsim.*;
+
+class Steps
+{
+    Steps()
+    {
+        TurtleRobot robot = new TurtleRobot();
+
+        for (int i = 0; i < 4; i++)
+        {
+            robot.forward(20);
+            robot.right(90);
+            robot.forward(20);
+            robot.left(90);
+        }
+
+        robot.exit();
+    }
+
+    public static void main(String[] args)
+    {
+        new Steps();
+    }
+}
+
+
+
+
+3. Change directions based on condition:
+import ch.aplu.robotsim.*;
+
+class RandomMove
+{
+    RandomMove()
+    {
+        TurtleRobot robot = new TurtleRobot();
+
+        for (int i = 0; i < 7; i++)
+        {
+            double a = Math.random();
+
+            if (a < 0.5)
+                robot.right(90);
+            else
+                robot.left(90);
+
+            robot.forward(100);
+        }
+
+        robot.exit();
+    }
+
+    public static void main(String[] args)
+    {
+        new RandomMove();
+    }
+}
+
+
+
+
+4. Controlling motor speed using switch case:
+import ch.aplu.robotsim.*;
+
+class SpeedSwitch
+{
+    SpeedSwitch()
+    {
+        TurtleRobot robot = new TurtleRobot();
+
+        for (int k = 1; k < 6; k++)
+        {
+            int speed;
+
+            switch (k)
+            {
+                case 1:
+                    speed = 20;
+                    break;
+
+                case 2:
+                    speed = 40;
+                    break;
+
+                case 3:
+                    speed = 60;
+                    break;
+
+                case 4:
+                    speed = 80;
+                    break;
+
+                default:
+                    speed = 50;
+            }
+
+            robot.setTurtleSpeed(speed);
+            robot.forward(200);
+            robot.right(90);
+        }
+
+        robot.exit();
+    }
+
+    public static void main(String[] args)
+    {
+        new SpeedSwitch();
+    }
+}
