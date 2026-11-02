@@ -1,0 +1,56 @@
+AIM: Write a program to create a robot (i) with gear (ii) without gear and move it forward, left, and right
+1)  RobotWithGear:
+             import ch.aplu.robotsim.*;
+
+public class SimEx2
+{
+  public SimEx2()
+  {
+    LegoRobot robot = new LegoRobot();
+    Gear gear = new Gear();
+    robot.addPart(gear);
+
+    gear.forward();
+    Tools.delay(2000);
+    gear.left(2000);
+    gear.forward(2000);
+    gear.leftArc(0.2, 2000);
+    gear.forward(2000);
+    gear.leftArc(-0.2, 2000);
+    robot.exit();
+  }
+
+  public static void main(String[] args)
+  {
+    new SimEx2();
+  }
+}
+
+
+
+
+2) RobotWithoutGear:
+    import ch.aplu.robotsim.*;
+
+public class RobotWithoutGear {
+
+    public RobotWithoutGear() {
+        TurtleRobot robot = new TurtleRobot();
+
+        robot.forward(1000);
+        robot.left(600);
+        robot.forward(1000);
+        robot.right(600);
+        robot.forward(1000);
+
+        robot.exit();
+    }
+
+    public static void main(String[] args) {
+        new RobotWithoutGear();
+    }
+} 
+
+
+
+
